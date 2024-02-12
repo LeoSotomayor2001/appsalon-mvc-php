@@ -1,0 +1,27 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.boton{
+    @include m.boton(v.$azul,v.$blanco);
+}
+#buscar,#boton {
+    background-color: #4CAF50; // Color de fondo verde
+    color: white; // Color de texto blanco
+    padding: 1rem 2rem; // Espaciado interno
+    border: none; // Sin borde
+    border-radius: .5rem; // Bordes redondeados
+    cursor: pointer; // Cambio de cursor al pasar el mouse
+    font-size: 1.6rem; // Tamaño de la fuente
+    transition: background-color 0.3s; // Transición suave del color de fondo
+  
+    &:hover {
+      background-color: #45a049; // Color de fondo más oscuro al pasar el mouse
+    }
+  
+    &:active {
+      background-color: #3e8e41; // Color de fondo más oscuro cuando se presiona
+    }
+}
+.boton-eliminar{
+    @include m.boton(v.$rojo,v.$blanco);
+}

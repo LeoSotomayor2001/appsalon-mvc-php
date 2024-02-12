@@ -1,0 +1,71 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.contenedor-app{
+    @include m.tablet{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        min-height: 100vh;
+    }
+    .imagen{
+        height: 20rem;
+        background-image: url(../img/1.jpg);
+        background-size: cover;
+        background-position: center center;
+        @include m.tablet{
+            height: auto;
+        }
+    }
+    .app {
+        width: 95%;
+        margin: 0 auto;
+        padding: 3rem 0;
+      
+        @include m.tablet {
+          overflow-y: scroll; /* Agrega desplazamiento vertical */
+          overflow-x: hidden; /* Oculta desplazamiento horizontal */
+          max-height: calc(100vh - 3rem); /* Ajusta la altura máxima para que el contenedor se ajuste a la pantalla */
+      
+          /* Personaliza la barra de desplazamiento en dispositivos tablet */
+          &::-webkit-scrollbar {
+            width: 5px; /* Ancho más delgado */
+          }
+          
+          &::-webkit-scrollbar-thumb {
+            background-color: #ccc; /* Color de fondo del 'pulgar' de la barra de desplazamiento */
+            border-radius: 10px; /* Bordes redondeados del 'pulgar' */
+          }
+      
+          &::-webkit-scrollbar-track {
+            background-color: transparent; /* Color de fondo de la pista de la barra de desplazamiento */
+          }
+        }
+      }
+      
+      
+      
+}
+.barra{
+    margin: 5rem 0;
+
+    @include m.tablet{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .boton{
+        @include m.boton(v.$rojo,v.$blanco);
+        margin: 0;
+    }
+}
+.barra-servicios{
+    margin-bottom: 5rem;
+    @include m.tablet{
+        display: flex;
+        justify-content: space-between;
+    }
+    .boton{
+        margin: 0 0 1rem 0;
+    }
+}
